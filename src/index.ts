@@ -5,7 +5,10 @@ function clamp(a: number) {
   return Math.min(1, Math.max(0, a));
 }
 function mapRange<T extends number>(a: T, b: T, c: T, d: T, e: T) {
-  return lerp1(e, d, clamp((c - a) / (c - b)));
+  return lerp1(d, e, getPercent(a, b, c));
+}
+function getPercent(a: number, b: number, c: number) {
+  return 1 - clamp((c - a) / (c - b));
 }
 
 $(window).on('scroll', () => {
@@ -30,7 +33,7 @@ function execute(x: number) {
     unit?: string,
   ) {
     if (a <= x && x <= b) {
-      set(name, f(lerp1(a, b, x)), unit);
+      set(name, f(getPercent(x, a, b)), unit);
     }
   }
 
