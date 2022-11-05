@@ -5,7 +5,7 @@ function lerp1(a: number, b: number, x: number) {
 $(window).on('scroll', () => {
   const percent = window.scrollY / window.innerHeight;
   $(document.body).css('background', `hsl(0, 0%, ${lerp1(0, 100, percent)}%)`);
-  set(R.arrowOpac, lerp1(100, -500, percent), '%')
+  set(R.arrowOpac, lerp1(100, -500, percent), '%');
 });
 
 $(() => {
@@ -16,6 +16,13 @@ $(() => {
 const R = {
   arrowOpac: '--arrowOpac',
 } as const;
+
+const R2 = xs(['arrowOpac']);
+
+function xs<T extends string[]>(t: T): { [P in T[number]]: `--${T[number]}` };
+function xs(t: string[]) {
+  return t.reduce((xs, ti) => ({ ...xs, [ti]: '--' + ti }), {});
+}
 
 function get(name: string) {
   return `var(${name})`;
@@ -42,3 +49,14 @@ const makeArrow = () =>
       style: 'fill:transparent;stroke:#ccc;stroke-width:2;',
     }),
   );
+
+export type Lit = string | number | boolean | undefined | null | void | {};
+export const tuple = <T extends string[]>(...args: T) =>
+  args.map(x => x + 'a') as { [i in keyof T]: `${T[i]}a` };
+
+const animals = tuple('cat', 'dog', 'rabbit', 'snake');
+type Animal = typeof animals[number]; // union type
+
+export const tuple2 = <T extends string[]>(...args: T) =>
+  args.map(x => ({x: x + 'a'})) as { [i in keyof T]:  `${T[i]}a`  };
+const a2 = tuple2('cat', 'dog', 'rabbit', 'snake')
