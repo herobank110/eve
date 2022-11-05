@@ -2,12 +2,10 @@
   "name": "leve",
   "version": "1.0.0",
   "description": "",
-  "source": "src/index.ts",
-  "main": "dist/index.js",
   "type": "module",
   "scripts": {
-    "build": "microbundle",
-    "dev": "microbundle watch"
+    "build": "parcel build src/index.html",
+    "dev": "parcel src/index.html --open"
   },
   "repository": {
     "type": "git",
@@ -15,7 +13,7 @@
   },
   "author": "David Kanekanian",
   "license": "ISC",
-  "dependencies": {
-    "microbundle": "^0.15.1"
+  "devDependencies": {
+    "parcel": "^2.7.0"
   }
 }
