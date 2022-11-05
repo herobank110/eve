@@ -20,8 +20,8 @@ function rgb1(x: number) {
   return `rgb(${x}, ${x}, ${x})`;
 }
 
-function pY(a: number) {
-  return `translateY(${a}px)`;
+function pY(a: number, unit = 'px') {
+  return `translateY(${a}${unit})`;
 }
 
 function execute(x: number) {
@@ -37,10 +37,19 @@ function execute(x: number) {
     }
   }
 
-  key(R.bodyBg, 0, 0.3, p => rgb1(lerp1(10, 255, p)));
-  key(R.arrowOpac, 0.05, 0.1, p => lerp1(100, 0, p), '%');
-  key(R.arrowTra, 0, 0.03, p => pY(lerp1(0, -10, p)));
-  key(R.arrowTra, 0.03, 0.1, p => pY(lerp1(-10, 60, p)));
+  const [t0, t1] = [0, 0.5];
+  key(R.bodyBg, t0, t1, p => rgb1(lerp1(10, 255, p)));
+  key(
+    R.arrowOpac,
+    lerp1(t0, t1, 0.2),
+    lerp1(t0, t1, 0.6),
+    p => lerp1(100, 0, p),
+    '%',
+  );
+  key(R.arrowTra, t0, lerp1(t0, t1, 0.3), p => pY(lerp1(0, -10, p)));
+  key(R.arrowTra, lerp1(t0, t1, 0.3), lerp1(t0, t1, 1.1), p =>
+    pY(lerp1(-10, 120, p), 'vh'),
+  );
 }
 
 $(() => {
