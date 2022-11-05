@@ -1,20 +1,37 @@
 function lerp1(a: number, b: number, x: number) {
   return a + (b - a) * x;
 }
+function clamp(a: number) {
+  return Math.min(1, Math.max(0, a));
+}
+function mapRange<T extends number>(a: T, b: T, c: T, d: T, e: T) {
+  return lerp1(e, d, clamp((c - a) / (c - b)));
+}
 
 $(window).on('scroll', () => {
   const percent = window.scrollY / window.innerHeight;
-  $(document.body).css('background', `hsl(0, 0%, ${lerp1(0, 100, percent)}%)`);
-  set(R.arrowOpac, lerp1(100, -500, percent), '%');
+  execute(percent);
 });
+
+function rgb1(x: number) {
+  return `rgb(${x}, ${x}, ${x})`;
+}
+
+function execute(percent: number) {
+  set(R.bodyBg, rgb1(mapRange(percent, 0, 0.3, 10, 255)));
+  set(R.arrowOpac, mapRange(percent, 0, 0.1, 100, 0), '%');
+}
 
 $(() => {
   $('.scr').append(makeArrow());
   $('.scr').html($('.scr').html()); // reload for svg
+  $('body').css('background', get(R.bodyBg));
+  execute(0);
 });
 
 const R = {
   arrowOpac: '--arrowOpac',
+  bodyBg: '--bodyBg',
 } as const;
 
 // const R2 = xs(['arrowOpac']);
