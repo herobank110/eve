@@ -48,7 +48,7 @@ function execute(x: number) {
   );
   key(R.arrowTra, t0, lerp1(t0, t1, 0.3), p => pY(lerp1(0, -10, p)));
   key(R.arrowTra, lerp1(t0, t1, 0.3), lerp1(t0, t1, 1.1), p =>
-    pY(lerp1(-10, 120, p), 'vh'),
+    pY(lerp1(-10, 520, p)),
   );
 }
 
