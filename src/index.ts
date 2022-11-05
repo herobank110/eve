@@ -5,7 +5,7 @@ function lerp1(a: number, b: number, x: number) {
 $(window).on('scroll', () => {
   const percent = window.scrollY / window.innerHeight;
   $(document.body).css('background', `hsl(0, 0%, ${lerp1(0, 100, percent)}%)`);
-  $('html').css(R.arrowOpac, lerp1(80, 20, percent) + '%');
+  set(R.arrowOpac, lerp1(100, -500, percent), '%')
 });
 
 $(() => {
