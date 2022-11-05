@@ -1,1 +1,3 @@
-console.log('hi');
+$(window).on('scroll', e => {
+  console.log(window.scrollY);
+});

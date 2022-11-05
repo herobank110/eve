@@ -1,12 +1,45 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="./index.ts"></script>
-    <title>David Kanekanian</title>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://code.jquery.com/jquery-3.6.1.slim.min.js"
+    integrity="sha256-w8CvhFs7iHNVUtnSP0YKEg00p9Ih13rlL9zGqvLdePA=" crossorigin="anonymous"></script>
+  <script src="./index.ts"></script>
+  <title>David Kanekanian</title>
+  <style>
+    .fill {
+      height: 100vh;
+      /* width: 100vw; */
+    }
+
+    .cent {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .blk {
+      background-color: #333;
+      color: #ccc;
+    }
+
+    body {
+      margin: 0
+    }
+  </style>
 </head>
+
 <body>
+  <div class="fill cent blk">
+    <svg width="100" height="200">
+      <line x1="50" y1="20" x2="50" y2="148" style="stroke:#ccc;stroke-width:2;" />
+      <polygon points="20,140, 80,140, 50,160" style="fill:transparent;stroke:#ccc;stroke-width:2;" />
+    </svg>
+  </div>
+  <div class="fill"></div>
 </body>
+
 </html>
