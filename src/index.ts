@@ -26,22 +26,18 @@ function execute(x: number) {
     name: string,
     a: number,
     b: number,
-    c: number,
-    d: number,
-    f: (x: number) => any | string,
+    f: (p: number) => string | number,
+    unit?: string,
   ) {
     if (a <= x && x <= b) {
-      const v = mapRange(x, a, b, c, d);
-      if (typeof f == 'string') set(name, v, f);
-      else set(name, f(v));
+      set(name, f(lerp1(a, b, x)), unit);
     }
   }
+
   set(R.bodyBg, rgb1(mapRange(x, 0, 0.3, 10, 255)));
   set(R.arrowOpac, mapRange(x, 0, 0.1, 100, 0), '%');
-  key(R.arrowTra, 0, 0.03, 0, -10, pY);
-  key(R.arrowTra, 0.03, 0.1, -10, 60, pY);
-  // set(R.arrowTra, pY(mapRange(x, 0, 0.03, 0, -50)));
-  // set(R.arrowTra, pY(mapRange(x, 0.03, 0.1, 0, 150)));
+  key(R.arrowTra, 0, 0.03, p => pY(lerp1(0, -10, p)));
+  key(R.arrowTra, 0.03, 0.1, p => pY(lerp1(-10, 60, p)));
 }
 
 $(() => {
