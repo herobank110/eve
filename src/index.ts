@@ -17,9 +17,31 @@ function rgb1(x: number) {
   return `rgb(${x}, ${x}, ${x})`;
 }
 
-function execute(percent: number) {
-  set(R.bodyBg, rgb1(mapRange(percent, 0, 0.3, 10, 255)));
-  set(R.arrowOpac, mapRange(percent, 0, 0.1, 100, 0), '%');
+function pY(a: number) {
+  return `translateY(${a}px)`;
+}
+
+function execute(x: number) {
+  function key(
+    name: string,
+    a: number,
+    b: number,
+    c: number,
+    d: number,
+    f: (x: number) => any | string,
+  ) {
+    if (a <= x && x <= b) {
+      const v = mapRange(x, a, b, c, d);
+      if (typeof f == 'string') set(name, v, f);
+      else set(name, f(v));
+    }
+  }
+  set(R.bodyBg, rgb1(mapRange(x, 0, 0.3, 10, 255)));
+  set(R.arrowOpac, mapRange(x, 0, 0.1, 100, 0), '%');
+  key(R.arrowTra, 0, 0.03, 0, -10, pY);
+  key(R.arrowTra, 0.03, 0.1, -10, 60, pY);
+  // set(R.arrowTra, pY(mapRange(x, 0, 0.03, 0, -50)));
+  // set(R.arrowTra, pY(mapRange(x, 0.03, 0.1, 0, 150)));
 }
 
 $(() => {
@@ -31,6 +53,7 @@ $(() => {
 
 const R = {
   arrowOpac: '--arrowOpac',
+  arrowTra: '--arrowTra',
   bodyBg: '--bodyBg',
 } as const;
 
@@ -52,7 +75,12 @@ function set(name: string, value: string | number, unit?: string) {
 
 const makeArrow = () =>
   $('<svg>', {
-    css: { width: 100, height: 200, opacity: get(R.arrowOpac) },
+    css: {
+      width: 100,
+      height: 200,
+      opacity: get(R.arrowOpac),
+      transform: get(R.arrowTra),
+    },
   }).append(
     $('<line>', {
       x1: '50',
