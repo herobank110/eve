@@ -37,8 +37,8 @@ function execute(x: number) {
     }
   }
 
-  set(R.bodyBg, rgb1(mapRange(x, 0, 0.3, 10, 255)));
-  set(R.arrowOpac, mapRange(x, 0, 0.1, 100, 0), '%');
+  key(R.bodyBg, 0, 0.3, p => rgb1(lerp1(10, 255, p)));
+  key(R.arrowOpac, 0.05, 0.1, p => lerp1(100, 0, p), '%');
   key(R.arrowTra, 0, 0.03, p => pY(lerp1(0, -10, p)));
   key(R.arrowTra, 0.03, 0.1, p => pY(lerp1(-10, 60, p)));
 }
