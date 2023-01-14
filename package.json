@@ -4,8 +4,8 @@
   "description": "",
   "type": "module",
   "scripts": {
-    "build": "parcel build src/index.html --public-url=./",
-    "dev": "parcel src/index.html --open"
+    "build": "parcel build src/v2/index.html --public-url=./",
+    "dev": "parcel         src/v2/index.html --open"
   },
   "repository": {
     "type": "git",
