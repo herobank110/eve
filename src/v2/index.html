@@ -19,7 +19,7 @@
             height: 800lvh;
         } */
 
-        .flipbookFrame {
+        .flipbookBorder {
             width: 512px;
             height: 512px;
             position: fixed;
@@ -28,6 +28,10 @@
             overflow: hidden;
             border: 1px solid grey;
             border-radius: 4px;
+        }
+
+        .frameReel {
+            position: absolute;
         }
     </style>
     <script>
@@ -38,22 +42,20 @@
             //     img.animate({})
             // })
             document.querySelector('.frameReel').animate(
-                { top: [''] },
+                { top: ['0px', `-${imgs.length * 512}px`] },
                 {
                     timeline: new ViewTimeline({ subject: document.body, orientation: 'block' }),
                     timeRange: 'cover',
                     fill: 'both'
                 }
-
             )
-
         }
     </script>
 </head>
 
 <body>
 
-    <div class="flipbookFrame">
+    <div class="flipbookBorder">
         <div class="frameReel">
             <img class="frameImg" src="flipbook/flipbook_1001.png" />
             <img class="frameImg" src="flipbook/flipbook_1002.png" />
