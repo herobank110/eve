@@ -43,15 +43,19 @@
             // })
             const keyframes = [
                 // '0px',
-                ...imgs.flatMap((_, i) => [
-                    `-${(i - 1) * 516}px`,
-                    `-${(i - 1) * 516}px`,
-                    `-${(i - 1) * 516}px`,
-                    `-${(i - 1) * 516 - 20}px`,
-                    `-${i * 516 - 10}px`,
-                     `-${i * 516}px`]), 
+                ...imgs.flatMap((_, i) =>
+                    i == 0
+                        ? ['0px', '0px', '0px', '0px', '0px', '-512px']
+                        : [
+                            `-${(i - 1) * 516}px`,
+                            `-${(i - 1) * 516}px`,
+                            `-${(i - 1) * 516}px`,
+                            `-${(i - 1) * 516 - 20}px`,
+                            `-${i * 516 - 10}px`,
+                            `-${i * 516}px`
+                        ]),
                 `-${imgs.length * 516}px`
-        ];
+            ];
             console.log(keyframes);
             document.querySelector('.frameReel').animate(
                 { top: keyframes },
