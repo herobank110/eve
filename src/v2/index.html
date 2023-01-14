@@ -1,10 +1,71 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>David Kanekanian</title>
+    <script src="https://flackr.github.io/scroll-timeline/dist/scroll-timeline.js"></script>
+    <link rel="prefetch" as="image" href="flipbook/flipbook_1001.png" />
+    <link rel="prefetch" as="image" href="flipbook/flipbook_1002.png" />
+    <link rel="prefetch" as="image" href="flipbook/flipbook_1003.png" />
+    <link rel="prefetch" as="image" href="flipbook/flipbook_1004.png" />
+    <link rel="prefetch" as="image" href="flipbook/flipbook_1005.png" />
+    <link rel="prefetch" as="image" href="flipbook/flipbook_1006.png" />
+    <link rel="prefetch" as="image" href="flipbook/flipbook_1007.png" />
+    <link rel="prefetch" as="image" href="flipbook/flipbook_1008.png" />
+    <style>
+        /* body {
+            height: 800lvh;
+        } */
+
+        .flipbookFrame {
+            width: 512px;
+            height: 512px;
+            position: fixed;
+            top: 20%;
+            left: 30%;
+            overflow: hidden;
+            border: 1px solid grey;
+            border-radius: 4px;
+        }
+    </style>
+    <script>
+        window.onload = () => {
+            const imgs = document.querySelectorAll(".frameImg")
+            document.body.style.height = `calc(${imgs.length} * 100lvh)`;
+            // imgs.forEach((img, i) => {
+            //     img.animate({})
+            // })
+            document.querySelector('.frameReel').animate(
+                { top: [''] },
+                {
+                    timeline: new ViewTimeline({ subject: document.body, orientation: 'block' }),
+                    timeRange: 'cover',
+                    fill: 'both'
+                }
+
+            )
+
+        }
+    </script>
 </head>
+
 <body>
+
+    <div class="flipbookFrame">
+        <div class="frameReel">
+            <img class="frameImg" src="flipbook/flipbook_1001.png" />
+            <img class="frameImg" src="flipbook/flipbook_1002.png" />
+            <img class="frameImg" src="flipbook/flipbook_1003.png" />
+            <img class="frameImg" src="flipbook/flipbook_1004.png" />
+            <img class="frameImg" src="flipbook/flipbook_1005.png" />
+            <img class="frameImg" src="flipbook/flipbook_1006.png" />
+            <img class="frameImg" src="flipbook/flipbook_1007.png" />
+            <img class="frameImg" src="flipbook/flipbook_1008.png" />
+        </div>
+    </div>
+
 </body>
+
 </html>
