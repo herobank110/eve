@@ -33,6 +33,14 @@
         .frameReel {
             position: absolute;
         }
+
+        .frameImg {
+            height: 512px;
+            margin: 0;
+            padding: 0;
+            border: none;
+            outline: none;
+        }
     </style>
     <script>
         window.onload = () => {
@@ -45,23 +53,25 @@
                 // '0px',
                 ...imgs.flatMap((_, i) =>
                     i == 0
-                        ? ['0px', '0px', '0px', '0px', '0px', '-512px']
+                        // ? ['0px', '0px', '0px', '0px', '0px', '512px']
+                        ? ['0px', '0px', '0px', '0px', '0px', '0px']
                         : [
                             `-${(i - 1) * 516}px`,
                             `-${(i - 1) * 516}px`,
                             `-${(i - 1) * 516}px`,
-                            `-${(i - 1) * 516 - 20}px`,
+                            `-${Math.abs((i - 1) * 516 - 20)}px`,
                             `-${i * 516 - 10}px`,
                             `-${i * 516}px`
                         ]),
-                `-${imgs.length * 516}px`
-            ];
+                // ...Array(5).fill(`-${imgs.length * 516}px`)
+            ].reverse();
             console.log(keyframes);
             document.querySelector('.frameReel').animate(
                 { top: keyframes },
                 {
                     timeline: new ViewTimeline({ subject: document.body, orientation: 'block' }),
-                    timeRange: 'contain 25% 75%',
+                    // timeRange: 'contain 25% 75%',
+                    timeRange: 'contain',
                     fill: 'both'
                 }
             )
@@ -73,14 +83,14 @@
 
     <div class="flipbookBorder">
         <div class="frameReel">
-            <img class="frameImg" src="flipbook/flipbook_1001.png" />
-            <img class="frameImg" src="flipbook/flipbook_1002.png" />
-            <img class="frameImg" src="flipbook/flipbook_1003.png" />
-            <img class="frameImg" src="flipbook/flipbook_1004.png" />
-            <img class="frameImg" src="flipbook/flipbook_1005.png" />
-            <img class="frameImg" src="flipbook/flipbook_1006.png" />
-            <img class="frameImg" src="flipbook/flipbook_1007.png" />
             <img class="frameImg" src="flipbook/flipbook_1008.png" />
+            <img class="frameImg" src="flipbook/flipbook_1007.png" />
+            <img class="frameImg" src="flipbook/flipbook_1006.png" />
+            <img class="frameImg" src="flipbook/flipbook_1005.png" />
+            <img class="frameImg" src="flipbook/flipbook_1004.png" />
+            <img class="frameImg" src="flipbook/flipbook_1003.png" />
+            <img class="frameImg" src="flipbook/flipbook_1002.png" />
+            <img class="frameImg" src="flipbook/flipbook_1001.png" />
         </div>
     </div>
 
