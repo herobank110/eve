@@ -23,7 +23,7 @@
             const keyframes = [
                 ...imgs.flatMap((_, i) =>
                     i == 0
-                        ? ['0px', '0px', '0px', '0px', '0px', '0px']
+                        ? Array(6).fill('0px')
                         : [
                             `-${(i - 1) * size}px`,
                             `-${(i - 1) * size}px`,
