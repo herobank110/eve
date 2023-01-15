@@ -42,6 +42,26 @@
                     fill: 'both'
                 }
             )
+            tickScroll();
+        }
+
+        let g_scrollVelocity = 0;
+        /** @param {ScrollEvent} e */
+        function onScroll(e) {
+            e.preventDefault();
+            g_scrollVelocity += e.deltaY;
+        }
+        window.addEventListener("mousewheel", onScroll, { passive: false })
+        function tickScroll() {
+            const dt = 1/60; // assume 60fps???
+            const constant = 3.5;
+            g_scrollVelocity *= 0.96;
+            if (g_scrollVelocity < 100)
+            g_scrollVelocity *= 0.98;
+            if (Math.abs(g_scrollVelocity) > 1) {
+                window.scrollTo(0, window.pageYOffset + g_scrollVelocity * dt * constant);
+            }
+            requestAnimationFrame(tickScroll);
         }
     </script>
 </head>
