@@ -54,13 +54,16 @@
         }
         window.addEventListener("mousewheel", onScroll, { passive: false })
         function tickScroll() {
-            const dt = 1/60; // assume 60fps???
+            const dt = 1 / 60; // assume 60fps???
             const constant = 3.5;
             g_scrollVelocity *= 0.96;
             if (g_scrollVelocity < 100)
-            g_scrollVelocity *= 0.98;
+                g_scrollVelocity *= 0.98;
             if (Math.abs(g_scrollVelocity) > 1) {
+                const oldPageYOffset = window.pageYOffset;
                 window.scrollTo(0, window.pageYOffset + g_scrollVelocity * dt * constant);
+                if (window.pageYOffset == oldPageYOffset)
+                    g_scrollVelocity = 0;
             }
             requestAnimationFrame(tickScroll);
         }
