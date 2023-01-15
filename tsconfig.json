@@ -1,6 +1,7 @@
 {
   "compilerOptions": {
     "strict": true,
-    "noUncheckedIndexedAccess": true
+    "noUncheckedIndexedAccess": true,
+    "lib": ["ES2020", "DOM"]
   }
 }
