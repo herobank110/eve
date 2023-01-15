@@ -19,15 +19,10 @@
         window.onload = () => {
             const imgs = [...document.querySelectorAll(".frameImg")];
             document.body.style.height = `calc(${imgs.length} * 100lvh)`;
-            // imgs.forEach((img, i) => {
-            //     img.animate({})
-            // })
             const size = imgs[0].clientHeight;
             const keyframes = [
-                // '0px',
                 ...imgs.flatMap((_, i) =>
                     i == 0
-                        // ? ['0px', '0px', '0px', '0px', '0px', '512px']
                         ? ['0px', '0px', '0px', '0px', '0px', '0px']
                         : [
                             `-${(i - 1) * size}px`,
@@ -37,9 +32,7 @@
                             `-${i * size - 10}px`,
                             `-${i * size}px`
                         ]),
-                // ...Array(5).fill(`-${imgs.length * 516}px`)
             ].reverse();
-            console.log(keyframes);
             document.querySelector('.frameReel').animate(
                 { top: keyframes },
                 {
