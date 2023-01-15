@@ -50,6 +50,7 @@
         function onScroll(e) {
             e.preventDefault();
             g_scrollVelocity += e.deltaY;
+            g_scrollVelocity *= 1.2;
         }
         window.addEventListener("mousewheel", onScroll, { passive: false })
         function tickScroll() {
