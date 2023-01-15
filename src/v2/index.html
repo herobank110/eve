@@ -22,6 +22,7 @@
             // imgs.forEach((img, i) => {
             //     img.animate({})
             // })
+            const size = 512 + 4;
             const keyframes = [
                 // '0px',
                 ...imgs.flatMap((_, i) =>
@@ -29,12 +30,12 @@
                         // ? ['0px', '0px', '0px', '0px', '0px', '512px']
                         ? ['0px', '0px', '0px', '0px', '0px', '0px']
                         : [
-                            `-${(i - 1) * 516}px`,
-                            `-${(i - 1) * 516}px`,
-                            `-${(i - 1) * 516}px`,
-                            `-${Math.abs((i - 1) * 516 - 20)}px`,
-                            `-${i * 516 - 10}px`,
-                            `-${i * 516}px`
+                            `-${(i - 1) * size}px`,
+                            `-${(i - 1) * size}px`,
+                            `-${(i - 1) * size}px`,
+                            `-${Math.abs((i - 1) * size - 20)}px`,
+                            `-${i * size - 10}px`,
+                            `-${i * size}px`
                         ]),
                 // ...Array(5).fill(`-${imgs.length * 516}px`)
             ].reverse();
