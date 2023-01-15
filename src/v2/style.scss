@@ -28,5 +28,13 @@
 }
 
 .frameImg {
-  object-fit: cover;
+  //   object-fit: cover;
+  width: 512px;
+  height: 512px;
+  @media screen and (max-width: 480px) {
+    height: 100vw;
+    width: 100vw;
+  }
+  background-position: center;
+  background-size: cover;
 }
