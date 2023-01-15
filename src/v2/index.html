@@ -16,26 +16,21 @@
     <link rel="prefetch" as="image" href="flipbook/flipbook_1008.png" />
     <link rel="stylesheet" href="style.scss" />
     <script>
-        let g_imgHeight = 0;
-        function refreshImgHeight() {
-            g_imgHeight = document.querySelector('.frameImg')?.clientHeight ?? 0;
-            requestAnimationFrame(refreshImgHeight);
-        }
         window.onload = () => {
-            refreshImgHeight();
             const imgs = [...document.querySelectorAll(".frameImg")];
             document.body.style.height = `calc(${imgs.length} * 100lvh)`;
+            const size = imgs[0].clientHeight;
             const keyframes = [
                 ...imgs.flatMap((_, i) =>
                     i == 0
-                        ? Array(6).fill('0px')
+                        ? ['0px', '0px', '0px', '0px', '0px', '0px']
                         : [
-                            `-${(i - 1) * g_imgHeight}px`,
-                            `-${(i - 1) * g_imgHeight}px`,
-                            `-${(i - 1) * g_imgHeight}px`,
-                            `-${Math.abs((i - 1) * g_imgHeight - 20)}px`,
-                            `-${i * g_imgHeight - 10}px`,
-                            `-${i * g_imgHeight}px`
+                            `-${(i - 1) * size}px`,
+                            `-${(i - 1) * size}px`,
+                            `-${(i - 1) * size}px`,
+                            `-${Math.abs((i - 1) * size - 20)}px`,
+                            `-${i * size - 10}px`,
+                            `-${i * size}px`
                         ]),
             ].reverse();
             document.querySelector('.frameReel').animate(
