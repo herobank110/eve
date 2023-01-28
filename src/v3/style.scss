@@ -1,1 +1,60 @@
-@use "~bootstrap/scss/bootstrap";
+@use '~bootstrap/scss/bootstrap';
+@import url('https://fonts.googleapis.com/css?family=Anonymous+Pro');
+
+$primaryColor: #64b5f6;
+
+.splash {
+  height: 100lvh;
+  background-image: url('data-url:./photo-1454165804606-c3d57bc86b40.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  display: flex;
+  align-items: center;
+  justify-content: stretch;
+}
+
+.mastheadTextBlock {
+  color: black;
+  background-color: #ffffffce;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.mastheadHeading {
+  border-right: 3px solid $primaryColor;
+  font-family: 'Anonymous Pro', monospace;
+  white-space: nowrap;
+  overflow: hidden;
+  //   margin: 0 auto;
+  animation: typewriter 1s steps(16) 0.2s 1 normal both,
+    blinkCaret 1s step-end 1.5s infinite;
+
+  @media screen and (max-width: 380px) {
+    font-size: 2rem;
+  }
+}
+
+@keyframes typewriter {
+  from {
+    width: 0;
+  }
+  to {
+    width: /* DEPENDS ON FINAL TEXT LENGTH! */ 8.7em;
+  }
+}
+
+@keyframes blinkCaret {
+  from,
+  to {
+    border-right-color: transparent;
+  }
+  50% {
+    border-right-color: $primaryColor;
+  }
+}
+
+.mastheadSubheading {
+}
