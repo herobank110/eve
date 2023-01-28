@@ -33,6 +33,7 @@ $primaryColor: #64b5f6;
   animation: typewriter 1s steps(16) 0.2s 1 normal both,
     blinkCaret 1s step-end 1.5s infinite;
 
+  font-size: 2.5rem;
   @media screen and (max-width: 380px) {
     font-size: 2rem;
   }
