@@ -1,7 +1,11 @@
 window.onload = () => {
-  document.querySelector('.splash:after').animate(
-    // { background: ['transparent', 'radial-gradient(circle, transparent 50%, black 150%)'] },
-    { background: ['black', 'red'] },
+  document.querySelector('.splashVignette').animate(
+    { background: [
+
+  'radial-gradient(circle, transparent 50%, transparent 150%)',
+  'radial-gradient(circle, transparent 50%, red 150%)'
+
+    ] },
     {
       timeline: new ViewTimeline({
         subject: document.querySelector('.splash'),
