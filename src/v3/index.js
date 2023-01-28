@@ -6,7 +6,7 @@ window.onload = () => {
         subject: document.querySelector('.splash'),
         orientation: 'block',
       }),
-      timeRange: 'exit 0% 50%',
+      timeRange: 'exit',
       fill: 'both',
     },
   );
