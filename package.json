@@ -4,8 +4,8 @@
   "description": "",
   "type": "module",
   "scripts": {
-    "build": "parcel build src/v2/index.html --public-url=./",
-    "dev": "parcel         src/v2/index.html --open"
+    "build": "parcel build src/v3/index.html --public-url=./",
+    "dev": "parcel         src/v3/index.html --open"
   },
   "repository": {
     "type": "git",
@@ -16,6 +16,7 @@
   "devDependencies": {
     "@parcel/transformer-sass": "^2.7.0",
     "@types/jquery": "^3.5.14",
+    "bootstrap": "^5.2.3",
     "parcel": "^2.7.0"
   }
 }
