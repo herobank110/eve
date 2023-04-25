@@ -5,7 +5,9 @@
   "type": "module",
   "scripts": {
     "build": "parcel build src/v4/index.html --public-url=./",
-    "dev": "parcel         src/v4/index.html --open"
+    "dev": "concurrently npm:dev-*",
+    "dev-parcel": "parcel  src/v4/index.html --open",
+    "dev-genAnim": "npx nodemon -w src/v4/anims -x python src/v4/anims/regenerate.py"
   },
   "repository": {
     "type": "git",
@@ -22,6 +24,8 @@
     "parcel": "^2.7.0"
   },
   "dependencies": {
-    "lottie-web": "^5.11.0"
+    "concurrently": "^8.0.1",
+    "lottie-web": "^5.11.0",
+    "nodemon": "^2.0.22"
   }
 }
