@@ -1,9 +1,10 @@
 window.onload = () => {
   document.querySelector('.splashVignette').animate(
-    { opacity: [0, 1, 1] },
+    { opacity: [0, 1] },
     {
       timeline: new ViewTimeline({
-        subject: document.querySelector('.splash'),
+        subject: document.querySelector(".splash"),
+        // subject: document.querySelector('body'),
         orientation: 'block',
       }),
       timeRange: 'exit',
