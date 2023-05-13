@@ -18,9 +18,9 @@
   "author": "David Kanekanian",
   "license": "ISC",
   "devDependencies": {
-    "@parcel/optimizer-data-url": "^2.7.0",
-    "@parcel/transformer-inline-string": "^2.7.0",
-    "@parcel/transformer-sass": "^2.7.0",
+    "@parcel/optimizer-data-url": "^2.8.3",
+    "@parcel/transformer-inline-string": "^2.8.3",
+    "@parcel/transformer-sass": "^2.8.3",
     "@types/jquery": "^3.5.14",
     "bootstrap": "^5.2.3"
   },
