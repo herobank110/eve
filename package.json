@@ -22,12 +22,12 @@
     "@parcel/transformer-inline-string": "^2.7.0",
     "@parcel/transformer-sass": "^2.7.0",
     "@types/jquery": "^3.5.14",
-    "bootstrap": "^5.2.3",
-    "parcel": "^2.7.0"
+    "bootstrap": "^5.2.3"
   },
   "dependencies": {
     "concurrently": "^8.0.1",
     "lottie-web": "^5.11.0",
-    "nodemon": "^2.0.22"
+    "nodemon": "^2.0.22",
+    "parcel": "^2.8.3"
   }
 }
