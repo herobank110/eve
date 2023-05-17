@@ -15,14 +15,14 @@ window.onload = () => {
   );
 
   document.querySelector('.splash')!.animate(
-    { position: ['fixed', 'relative'], transform: ['', 'translateY(25lvh)'] },
+    { position: ['fixed', 'relative'], translate: ['0 0', '0 50lvh'] },
     {
       timeline: new ViewTimeline({
         subject: document.querySelector('.a1')!,
         orientation: 'block',
       }),
       timeRange: 'exit 0% 50%',
-      easing: 'steps(2, end)',
+      easing: 'steps(1)',
       fill: 'both',
     },
   );
