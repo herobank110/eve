@@ -20,7 +20,7 @@ window.onload = () => {
       timeline: new ViewTimeline({
         subject: document.querySelector('.t1')!,
       }),
-      timeRange: 'exit 15% 50%',
+      timeRange: 'exit 15% 35%',
       fill: 'both',
       easing: 'ease-in',
     },
