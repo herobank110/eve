@@ -82,18 +82,21 @@ $primaryColor: #64b5f6;
 // #region debug
 
 // alternating colors for background tracks for debugging
-.track > :nth-child(even) {
-  background-color: #eee;
+
+.t:nth-child(odd) {
+  background: linear-gradient(#e8abae 50%, #f16363 50%) center / 20lvh 20lvh
 }
-.track > :nth-child(odd) {
-  background-color: #ccc;
+
+.t:nth-child(even) {
+  background: linear-gradient(#92f0cf 50%, #78d685 50%) center / 20lvh 20lvh
 }
 
 // debug opacity
 :root {
   --debug-opacity: 100%;
 }
-.track > * > * {
+
+.t > * {
   opacity: var(--debug-opacity);
 }
 
