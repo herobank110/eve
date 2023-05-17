@@ -5,7 +5,9 @@
   "type": "module",
   "scripts": {
     "build": "parcel build src/v4/index.html --public-url=./",
-    "dev": "concurrently npm:dev-*",
+    "dev-v3": "parcel  src/v3/index.html --open",
+    "dev-v4": "concurrently npm:dev-*",
+    "dev-v5": "parcel  src/v5/index.html --open",
     "dev-parcel": "parcel  src/v4/index.html --open",
     "dev-genAnim": "npx nodemon -w src/v4/anims -x python src/v4/anims/regenerate.py"
   },
@@ -16,16 +18,16 @@
   "author": "David Kanekanian",
   "license": "ISC",
   "devDependencies": {
-    "@parcel/optimizer-data-url": "^2.7.0",
-    "@parcel/transformer-inline-string": "^2.7.0",
-    "@parcel/transformer-sass": "^2.7.0",
+    "@parcel/optimizer-data-url": "^2.8.3",
+    "@parcel/transformer-inline-string": "^2.8.3",
+    "@parcel/transformer-sass": "^2.8.3",
     "@types/jquery": "^3.5.14",
-    "bootstrap": "^5.2.3",
-    "parcel": "^2.7.0"
+    "bootstrap": "^5.2.3"
   },
   "dependencies": {
     "concurrently": "^8.0.1",
     "lottie-web": "^5.11.0",
-    "nodemon": "^2.0.22"
+    "nodemon": "^2.0.22",
+    "parcel": "^2.8.3"
   }
 }

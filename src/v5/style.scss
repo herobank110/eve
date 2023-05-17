@@ -1,0 +1,15 @@
+body {
+    margin: 0;
+}
+
+.splash {
+  height: 100lvh;
+  background-image: url('data-url:../v3/photo-1454165804606-c3d57bc86b40.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: stretch;
+}
