@@ -83,12 +83,19 @@ $primaryColor: #64b5f6;
 
 // alternating colors for background tracks for debugging
 
+.t {
+  background: linear-gradient(#fff4 50%, #0003 50%),
+    linear-gradient(var(--col1) 50%, var(--col2) 50%) center / 20lvh 20lvh;
+}
+
 .t:nth-child(odd) {
-  background: linear-gradient(#e8abae 50%, #f16363 50%) center / 20lvh 20lvh
+  --col1: #e8abae;
+  --col2: #f16363;
 }
 
 .t:nth-child(even) {
-  background: linear-gradient(#92f0cf 50%, #78d685 50%) center / 20lvh 20lvh
+  --col1: #92f0cf;
+  --col2: #78d685;
 }
 
 // debug opacity
