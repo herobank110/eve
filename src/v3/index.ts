@@ -1,5 +1,3 @@
-/// <reference path="./@types/types.d.ts" />
-
 window.onload = () => {
   document.querySelector('.splashVignette')!.animate(
     { opacity: [0, 1] },
