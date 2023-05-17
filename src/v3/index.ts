@@ -21,4 +21,15 @@ window.onload = () => {
       fill: 'both',
     },
   );
+
+  document.querySelector('.splash')!.animate(
+    { translate: ['0 50lvh', '0 0'] },
+    {
+      timeline: new ViewTimeline({
+        subject: document.querySelector('.a1')!,
+      }),
+      timeRange: 'exit 50% 100%',
+      fill: 'forwards',
+    },
+  );
 };
