@@ -6,6 +6,7 @@ $primaryColor: #64b5f6;
 // #region splash
 
 .splash {
+  z-index: 999;
   position: fixed;
   top: 0;
   width: 100%;
@@ -75,6 +76,27 @@ $primaryColor: #64b5f6;
 .mastheadSubheading {
   margin: 0;
   font-size: 1.2rem;
+}
+
+// #endregion
+
+// #region ext01
+
+.ext01 {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 100lvh;
+}
+
+.clouds {
+  background-image: url('data-url:./clouds2.jpg');
+  height: 60lvh;
+  background-size: cover;
+  background-position-x: center;
+  background-position-y: top;
+
+  background-repeat: no-repeat;
 }
 
 // #endregion
