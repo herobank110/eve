@@ -7,20 +7,20 @@ window.onload = () => {
         // subject: document.querySelector('body'),
         orientation: 'block',
       }),
-      timeRange: 'exit 0% 50%',
+      timeRange: 'exit 25% 50%',
       fill: 'both',
     },
   );
 
-  // document.querySelector('.splash').animate(
-  //   { position: ["fixed", "fixed"] },
-  //   {
-  //     timeline: new ViewTimeline({
-  //       subject: document.querySelector('.1'),
-  //       orientation: 'block',
-  //     }),
-  //     timeRange: 'exit',
-  //     fill: 'both',
-  //   },
-  // );
+  document.querySelector('.splash').animate(
+    { position: ["fixed", "relative"] },
+    {
+      timeline: new ViewTimeline({
+        subject: document.querySelector('.a1'),
+        orientation: 'block',
+      }),
+      timeRange: 'exit 0% 50%',
+      fill: 'both',
+    },
+  );
 };
