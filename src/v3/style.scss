@@ -78,3 +78,11 @@ $primaryColor: #64b5f6;
 }
 
 // #endregion
+
+// alternating colors for background tracks for debugging
+body > :nth-child(even) {
+  background-color: #eee;
+}
+body > :nth-child(odd) {
+  background-color: #ccc;
+}
