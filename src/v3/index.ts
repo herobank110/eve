@@ -6,8 +6,6 @@ window.onload = () => {
     {
       timeline: new ViewTimeline({
         subject: document.querySelector('.a1')!,
-        // subject: document.querySelector('body'),
-        orientation: 'block',
       }),
       timeRange: 'exit 25% 50%',
       fill: 'both',
@@ -19,7 +17,6 @@ window.onload = () => {
     {
       timeline: new ViewTimeline({
         subject: document.querySelector('.a1')!,
-        orientation: 'block',
       }),
       timeRange: 'exit 0% 50%',
       easing: 'steps(1)',
