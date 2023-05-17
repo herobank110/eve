@@ -1,5 +1,5 @@
 declare class ViewTimeline {
-  constructor(opts: { subject: HTMLElement; orientation?: string });
+  constructor(opts: { subject: Element; orientation?: string });
 }
 
 type AnimationTimeRangeKeywords = 'cover' | 'contain' | 'enter' | 'exit';
