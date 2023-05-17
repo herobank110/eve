@@ -18,7 +18,7 @@ window.onload = () => {
     { opacity: [0, 1] },
     {
       timeline: new ViewTimeline({
-        subject: document.querySelector('.a1')!,
+        subject: document.querySelector('.t1')!,
       }),
       timeRange: 'exit 15% 50%',
       fill: 'both',
@@ -29,7 +29,7 @@ window.onload = () => {
     { position: ['fixed', 'relative'], translate: ['', '0 50lvh'] },
     {
       timeline: new ViewTimeline({
-        subject: document.querySelector('.a1')!,
+        subject: document.querySelector('.t1')!,
       }),
       timeRange: 'exit 0% 50%',
       easing: 'steps(1)',
@@ -41,7 +41,7 @@ window.onload = () => {
     { translate: ['0 50lvh', '0 0'] },
     {
       timeline: new ViewTimeline({
-        subject: document.querySelector('.a1')!,
+        subject: document.querySelector('.t1')!,
       }),
       timeRange: 'exit 50% 100%',
       fill: 'forwards',
