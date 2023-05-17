@@ -79,6 +79,8 @@ $primaryColor: #64b5f6;
 
 // #endregion
 
+// #region debug
+
 // alternating colors for background tracks for debugging
 body > :nth-child(even) {
   background-color: #eee;
@@ -86,3 +88,18 @@ body > :nth-child(even) {
 body > :nth-child(odd) {
   background-color: #ccc;
 }
+
+// debug opacity
+:root {
+  --debug-opacity: 100%;
+}
+body > * > * {
+  opacity: var(--debug-opacity);
+}
+
+// lilgui debug theme
+.lil-gui>.children {
+  background-color: black;
+}
+
+// #endregion

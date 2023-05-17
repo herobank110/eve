@@ -22,7 +22,8 @@
     "@parcel/transformer-inline-string": "^2.8.3",
     "@parcel/transformer-sass": "^2.8.3",
     "@types/jquery": "^3.5.14",
-    "bootstrap": "^5.2.3"
+    "bootstrap": "^5.2.3",
+    "lil-gui": "^0.18.1"
   },
   "dependencies": {
     "concurrently": "^8.0.1",
