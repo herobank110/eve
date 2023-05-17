@@ -3,11 +3,11 @@ window.onload = () => {
     { opacity: [0, 1] },
     {
       timeline: new ViewTimeline({
-        subject: document.querySelector(".splash"),
+        subject: document.querySelector(".a1"),
         // subject: document.querySelector('body'),
         orientation: 'block',
       }),
-      timeRange: 'exit',
+      timeRange: 'exit 0% 50%',
       fill: 'both',
     },
   );
