@@ -2,7 +2,7 @@ declare class ViewTimeline {
   constructor(opts: { subject: HTMLElement; orientation?: string });
 }
 
-type AnimationTimeRangeKeywords = 'contain' | 'enter' | 'exit';
+type AnimationTimeRangeKeywords = 'cover' | 'contain' | 'enter' | 'exit';
 type AnimationTimeRangeKey = `${number}%`;
 type AnimationTimeRangeKeys =
   | ''
