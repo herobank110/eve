@@ -5,13 +5,13 @@ window.onload = () => {
       timeline: new ViewTimeline({
         subject: document.querySelector('.a1')!,
       }),
-      timeRange: 'exit 25% 50%',
+      timeRange: 'exit 15% 50%',
       fill: 'both',
     },
   );
 
   document.querySelector('.splash')!.animate(
-    { position: ['fixed', 'relative'], translate: ['0 0', '0 50lvh'] },
+    { position: ['fixed', 'relative'], translate: ['', '0 50lvh'] },
     {
       timeline: new ViewTimeline({
         subject: document.querySelector('.a1')!,
