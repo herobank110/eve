@@ -17,11 +17,11 @@ const track = (index: number) =>
   new (class {
     animate(
       selector: string,
-      keyframes: Keyframe[],
+      keyframes: Keyframe[] | PropertyIndexedKeyframes,
       options: KeyframeAnimationOptions,
     ) {
       // track element for scroll percentages.
-      const trackEl = document.querySelector(`t${index}`);
+      const trackEl = document.querySelector(`.t${index}`);
       if (!trackEl) throw new Error(`Invalid element for track: ${index}`);
 
       // the element we are about to animate.
@@ -41,39 +41,24 @@ const track = (index: number) =>
   })();
 
 window.onload = () => {
-  document.querySelector('.splashVignette')!.animate(
-    { opacity: [0, 1] },
-    {
-      timeline: new ViewTimeline({
-        subject: document.querySelector('.t1')!,
-      }),
-      timeRange: 'exit 15% 35%',
-      fill: 'both',
-      easing: 'ease-in',
-    },
-  );
-
-  document.querySelector('.splash')!.animate(
-    { position: ['fixed', 'relative'], translate: ['', '0 24lvh'] },
-    {
-      timeline: new ViewTimeline({
-        subject: document.querySelector('.t1')!,
-      }),
-      timeRange: 'exit 0% 30%',
-      easing: 'steps(1)',
-      fill: 'both',
-    },
-  );
-
-  document.querySelector('.splash')!.animate(
-    { translate: ['0 24lvh', '0 -20lvh'] },
-    {
-      timeline: new ViewTimeline({
-        subject: document.querySelector('.t1')!,
-      }),
-      timeRange: 'exit 30% 100%',
-      easing: 'cubic-bezier(0.3, 0.3, 0.1, 1)',
-      fill: 'forwards',
-    },
-  );
+  track(1)
+    .animate(
+      '.splashVignette',
+      { opacity: [0, 1] },
+      { timeRange: 'exit 15% 35%', fill: 'both', easing: 'ease-in' },
+    )
+    .animate(
+      '.splash',
+      { position: ['fixed', 'relative'], translate: ['', '0 24lvh'] },
+      { timeRange: 'exit 0% 30%', easing: 'steps(1)', fill: 'both' },
+    )
+    .animate(
+      '.splash',
+      { translate: ['0 24lvh', '0 -20lvh'] },
+      {
+        timeRange: 'exit 30% 100%',
+        easing: 'cubic-bezier(0.3, 0.3, 0.1, 1)',
+        fill: 'forwards',
+      },
+    );
 };
