@@ -22,28 +22,30 @@ window.onload = () => {
       }),
       timeRange: 'exit 15% 50%',
       fill: 'both',
+      easing: 'ease-in',
     },
   );
 
   document.querySelector('.splash')!.animate(
-    { position: ['fixed', 'relative'], translate: ['', '0 50lvh'] },
+    { position: ['fixed', 'relative'], translate: ['', '0 24lvh'] },
     {
       timeline: new ViewTimeline({
         subject: document.querySelector('.t1')!,
       }),
-      timeRange: 'exit 0% 50%',
+      timeRange: 'exit 0% 30%',
       easing: 'steps(1)',
       fill: 'both',
     },
   );
 
   document.querySelector('.splash')!.animate(
-    { translate: ['0 50lvh', '0 0'] },
+    { translate: ['0 24lvh', '0 -20lvh'] },
     {
       timeline: new ViewTimeline({
         subject: document.querySelector('.t1')!,
       }),
-      timeRange: 'exit 50% 100%',
+      timeRange: 'exit 30% 100%',
+      easing: 'ease-out',
       fill: 'forwards',
     },
   );
