@@ -45,7 +45,7 @@ window.onload = () => {
         subject: document.querySelector('.t1')!,
       }),
       timeRange: 'exit 30% 100%',
-      easing: 'ease-out',
+      easing: 'cubic-bezier(0.3, 0.3, 0.1, 1)',
       fill: 'forwards',
     },
   );
