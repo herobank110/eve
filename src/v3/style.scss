@@ -84,8 +84,8 @@ $primaryColor: #64b5f6;
 // alternating colors for background tracks for debugging
 
 .t {
-  background: linear-gradient(#fff4 50%, #0003 50%),
-    linear-gradient(var(--col1) 50%, var(--col2) 50%) center / 20lvh 20lvh;
+  background: linear-gradient(#fff4 50%, #0003 50%) top / 100lvh 100lvh,
+    linear-gradient(var(--col1) 50%, var(--col2) 50%) top / 20lvh 20lvh;
 }
 
 .t:nth-child(odd) {
