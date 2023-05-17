@@ -27,7 +27,7 @@ window.onload = () => {
   );
 
   document.querySelector('.splash')!.animate(
-    { position: ['fixed', 'relative'], translate: ['', '0 18lvh'] },
+    { position: ['fixed', 'relative'], translate: ['', '0 24lvh'] },
     {
       timeline: new ViewTimeline({
         subject: document.querySelector('.t1')!,
@@ -39,7 +39,7 @@ window.onload = () => {
   );
 
   document.querySelector('.splash')!.animate(
-    { translate: ['0 18lvh', '0 -40lvh'] },
+    { translate: ['0 24lvh', '0 -20lvh'] },
     {
       timeline: new ViewTimeline({
         subject: document.querySelector('.t1')!,
