@@ -1,3 +1,4 @@
+import './scroll-timeline';
 import LilGui from 'lil-gui';
 
 // helper functions
