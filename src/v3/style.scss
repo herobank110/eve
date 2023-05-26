@@ -115,6 +115,23 @@ $primaryColor: #64b5f6;
   background-repeat: no-repeat;
 }
 
+.castleRoot {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.castle {
+  background: url('data-url:./castle.png') center / cover;
+  height: 30lvh;
+  aspect-ratio: 1/1;
+}
+
 // #endregion
 
 // #region debug
