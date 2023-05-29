@@ -35,7 +35,8 @@ $primaryColor: #64b5f6;
   left: 0;
   width: 100%;
   height: 100%;
-  background: radial-gradient(circle, transparent 60%, #777 150%), #ecc087;
+  background: radial-gradient(circle, #0000 60%, #ef7676 150%),
+    linear-gradient(45deg, #dc354591, #b8252557), #ecc087;
 }
 
 .splashTrellis {
@@ -44,7 +45,7 @@ $primaryColor: #64b5f6;
   left: 0;
   width: 100%;
   height: 100%;
-  background: url("./trellis01a.png") bottom / 300px;
+  background: url('./trellis01a.png') bottom / 300px;
 }
 
 // .splashPortcullis {
@@ -137,8 +138,8 @@ $primaryColor: #64b5f6;
     background: linear-gradient(#75e398 0%, #55dd60 100%);
     clip-path: ellipse(118% 49%);
   }
-  &>.flower {
-    background: url("data-url:./flower01a.png") center / cover;
+  & > .flower {
+    background: url('data-url:./flower01a.png') center / cover;
     position: absolute;
     top: 50%;
     left: 40%;
