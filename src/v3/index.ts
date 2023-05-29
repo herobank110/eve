@@ -33,7 +33,7 @@ animate(
 animate(
   '.splashTrellis',
   { opacity: [0, 1] },
-  { timeRange: 'exit 15% 40%', fill: 'both', easing: 'ease-in' },
+  { timeRange: 'exit 15% 27%', fill: 'both', easing: 'steps(1)' },
 );
 animate(
   '.splash',
