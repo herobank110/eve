@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "build": "parcel build src/v4/index.html --public-url=./",
-    "dev-v3": "parcel  src/v3/index.html --open",
+    "dev-v3": "parcel  src/v3/index.pug --open",
     "dev-v4": "concurrently npm:dev-*",
     "dev-v5": "parcel  src/v5/index.html --open",
     "dev-parcel": "parcel  src/v4/index.html --open",
