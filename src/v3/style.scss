@@ -30,20 +30,24 @@ $primaryColor: #64b5f6;
   background: radial-gradient(circle, transparent 50%, black 150%), #173543;
 }
 
-.splashPortcullis {
-  position: absolute;
-  top: 100%;
-  left: 0;
-  width: 100%;
+.splashTrellis {
+  background: url("data-url:./trellis01a.png");
 }
-.portcullis_m {
-  height: 20lvh;
-  background: url('data-url:./portcullis_m.png');
-}
-.portcullis_b {
-  height: 10lvh;
-  background: url('data-url:./portcullis_b.png');
-}
+
+// .splashPortcullis {
+//   position: absolute;
+//   top: 100%;
+//   left: 0;
+//   width: 100%;
+// }
+// .portcullis_m {
+//   height: 20lvh;
+//   background: url('data-url:./portcullis_m.png');
+// }
+// .portcullis_b {
+//   height: 10lvh;
+//   background: url('data-url:./portcullis_b.png');
+// }
 
 .mastheadTextBlock {
   color: black;
