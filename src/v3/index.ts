@@ -1,10 +1,5 @@
 import './scroll-timeline';
 import LilGui from 'lil-gui';
-import structureHtml from "bundle-text:./structure.pug";
-
-console.log(structureHtml);
-
-
 
 // helper functions
 
