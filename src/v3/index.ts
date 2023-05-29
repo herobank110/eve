@@ -28,7 +28,7 @@ const animate = (
 animate(
   '.splashVignette',
   { opacity: [0, 1, 1, 0] },
-  { timeRange: 'exit 2% 40%', fill: 'both', easing: 'ease-in' },
+  { timeRange: 'exit -10% 40%', fill: 'both', easing: 'ease-in' },
 );
 animate(
   '.splashTrellis',
@@ -38,20 +38,21 @@ animate(
 animate(
   '.splash',
   { visibility: ['visible', 'hidden'] },
-  { timeRange: `exit 0% 30%`, fill: 'both', easing: 'steps(1)' },
+  { timeRange: `exit 0% 26%`, fill: 'both', easing: 'steps(1)' },
 );
 {
-  let p = 0.4;
+  let p = 0.3;
   // @ts-ignore
   let h = +document.querySelector('.t1').style.height.split('lvh')[0];
+  let o = h - (1 - p) * 100;
   animate(
     '.fix01a',
-    { position: ['fixed', 'relative'], translate: ['', `0 ${(1 - p) * h}lvh`] },
+    { position: ['fixed', 'relative'], translate: ['', `0 ${o}lvh`] },
     { timeRange: `exit 0% ${p * 100}%`, fill: 'both', easing: 'steps(1)' },
   );
   animate(
     '.fix01a',
-    { translate: [`0 ${(1 - p) * h}lvh`, `0 ${-100 + h}lvh`] },
+    { translate: [`0 ${o}lvh`, `0 ${-100 + h}lvh`] },
     {
       timeRange: `exit ${p * 100}% 100%`,
       fill: 'forwards',
