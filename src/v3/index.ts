@@ -41,7 +41,7 @@ animate(
   { timeRange: `exit 0% 26%`, fill: 'both', easing: 'steps(1)' },
 );
 {
-  let p = 0.3;
+  let p = 0.35;
   // @ts-ignore
   let h = +document.querySelector('.t1').style.height.split('lvh')[0];
   let o = h - (1 - p) * 100;
