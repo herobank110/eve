@@ -28,25 +28,30 @@ const animate = (
 animate(
   '.splashVignette',
   { opacity: [0, 1, 1, 0] },
-  { timeRange: 'exit 5% 40%', fill: 'both', easing: 'ease-in' },
+  { timeRange: 'exit 2% 40%', fill: 'both', easing: 'ease-in' },
 );
 animate(
   '.splashTrellis',
   { opacity: [0, 1] },
   { timeRange: 'exit 15% 40%', fill: 'both', easing: 'ease-in' },
 );
+animate(
+  '.splash',
+  { visibility: ['visible', 'hidden'] },
+  { timeRange: `exit 0% 30%`, fill: 'both', easing: 'steps(1)' },
+);
 {
   let p = 0.4;
   // @ts-ignore
   let h = +document.querySelector('.t1').style.height.split('lvh')[0];
   animate(
-    '.splash',
-    { position: ['fixed', 'relative'], translate: ['', `0 ${(1-p) * h}lvh`] },
+    '.fix01a',
+    { position: ['fixed', 'relative'], translate: ['', `0 ${(1 - p) * h}lvh`] },
     { timeRange: `exit 0% ${p * 100}%`, fill: 'both', easing: 'steps(1)' },
   );
   animate(
-    '.splash',
-    { translate: [`0 ${(1-p) * h}lvh`, `0 ${-100 + h}lvh`] },
+    '.fix01a',
+    { translate: [`0 ${(1 - p) * h}lvh`, `0 ${-100 + h}lvh`] },
     {
       timeRange: `exit ${p * 100}% 100%`,
       fill: 'forwards',
@@ -56,16 +61,16 @@ animate(
 }
 
 animate(
-  ".fix01a",
-  {visibility: ['hidden', 'visible']},
-  {timeRange: 'enter -50% 0%', fill:'both', easing: 'steps(1)'}
-)
+  '.fix01a',
+  { visibility: ['hidden', 'visible'] },
+  { timeRange: 'enter -50% 0%', fill: 'both', easing: 'steps(1)' },
+);
 
 animate(
-  ".ext01",
-  {visibility: ['hidden', 'visible']},
-  {timeRange: 'enter -50% 0%', fill:'both', easing: 'steps(1)'}
-)
+  '.ext01',
+  { visibility: ['hidden', 'visible'] },
+  { timeRange: 'enter -50% 0%', fill: 'both', easing: 'steps(1)' },
+);
 
 // apply debug gui
 

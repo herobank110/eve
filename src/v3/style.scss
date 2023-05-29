@@ -5,9 +5,17 @@ $primaryColor: #64b5f6;
 
 // #region splash
 
-.splash {
+.fix01a {
   z-index: 999;
   position: fixed;
+  top: 0;
+  width: 100%;
+  height: 100lvh;
+}
+
+.splash {
+  z-index: 999;
+  // position: fixed;
   top: 0;
   width: 100%;
   height: 100lvh;
@@ -106,7 +114,7 @@ $primaryColor: #64b5f6;
 
 // #region fix01a
 
-.fix01a {
+.fix02a {
   position: fixed;
   top: 0;
   width: 100%;
