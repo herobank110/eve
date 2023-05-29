@@ -55,6 +55,18 @@ animate(
   );
 }
 
+animate(
+  ".fix01a",
+  {visibility: ['hidden', 'visible']},
+  {timeRange: 'enter -50% 0%', fill:'both', easing: 'steps(1)'}
+)
+
+animate(
+  ".ext01",
+  {visibility: ['hidden', 'visible']},
+  {timeRange: 'enter -50% 0%', fill:'both', easing: 'steps(1)'}
+)
+
 // apply debug gui
 
 if (window.location.hostname == 'localhost') {
