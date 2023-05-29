@@ -28,22 +28,32 @@ const animate = (
 animate(
   '.splashVignette',
   { opacity: [0, 1] },
-  { timeRange: 'exit 15% 35%', fill: 'both', easing: 'ease-in' },
+  { timeRange: 'exit 10% 25%', fill: 'both', easing: 'ease-in' },
 );
 animate(
-  '.splash',
-  { position: ['fixed', 'relative'], translate: ['', '0 24lvh'] },
-  { timeRange: 'exit 0% 30%', fill: 'both', easing: 'steps(1)' },
+  '.splashTrellis',
+  { opacity: [0, 1] },
+  { timeRange: 'exit 20% 40%', fill: 'both', easing: 'ease-in' },
 );
-animate(
-  '.splash',
-  { translate: ['0 24lvh', '0 -20lvh'] },
-  {
-    timeRange: 'exit 30% 100%',
-    fill: 'forwards',
-    easing: 'cubic-bezier(0.3, 0.3, 0.1, 1)',
-  },
-);
+{
+  let p = 0.4;
+  // @ts-ignore
+  let h = +document.querySelector('.t1').style.height.split('lvh')[0];
+  animate(
+    '.splash',
+    { position: ['fixed', 'relative'], translate: ['', `0 ${(1-p) * h}lvh`] },
+    { timeRange: `exit 0% ${p * 100}%`, fill: 'both', easing: 'steps(1)' },
+  );
+  animate(
+    '.splash',
+    { translate: [`0 ${(1-p) * h}lvh`, `0 ${-100 + h}lvh`] },
+    {
+      timeRange: `exit ${p * 100}% 100%`,
+      fill: 'forwards',
+      easing: 'cubic-bezier(0.3, 0.3, 0.1, 1)',
+    },
+  );
+}
 
 // apply debug gui
 
