@@ -45,7 +45,6 @@ $primaryColor: #64b5f6;
   background: url('data-url:./portcullis_b.png');
 }
 
-
 .mastheadTextBlock {
   color: black;
   background-color: #ffffffce;
@@ -92,6 +91,35 @@ $primaryColor: #64b5f6;
 .mastheadSubheading {
   margin: 0;
   font-size: 1.2rem;
+}
+
+// #endregion
+
+// #region fix01a
+
+.fix01a {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 100lvh;
+  z-index: 100;
+  & > .sky {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(#75c1e3 0%, #65b9e4 100%);
+  }
+  & > .grass {
+    position: absolute;
+    top: 50%;
+    left: -29%;
+    width: 130%;
+    height: 150%;
+    background: linear-gradient(#75e398 0%, #55dd60 100%);
+    clip-path: ellipse(118% 49%);
+  }
 }
 
 // #endregion
