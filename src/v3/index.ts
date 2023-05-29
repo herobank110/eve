@@ -27,13 +27,13 @@ const animate = (
 
 animate(
   '.splashVignette',
-  { opacity: [0, 1] },
-  { timeRange: 'exit 10% 25%', fill: 'both', easing: 'ease-in' },
+  { opacity: [0, 1, 1, 0] },
+  { timeRange: 'exit 5% 40%', fill: 'both', easing: 'ease-in' },
 );
 animate(
   '.splashTrellis',
   { opacity: [0, 1] },
-  { timeRange: 'exit 20% 40%', fill: 'both', easing: 'ease-in' },
+  { timeRange: 'exit 15% 40%', fill: 'both', easing: 'ease-in' },
 );
 {
   let p = 0.4;
