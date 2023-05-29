@@ -120,6 +120,14 @@ $primaryColor: #64b5f6;
     background: linear-gradient(#75e398 0%, #55dd60 100%);
     clip-path: ellipse(118% 49%);
   }
+  &>.flower {
+    background: url("data-url:./flower01a.png") center / cover;
+    position: absolute;
+    top: 50%;
+    left: 40%;
+    width: min(30vw, 20lvh);
+    aspect-ratio: 1/2;
+  }
 }
 
 // #endregion
