@@ -26,9 +26,14 @@ const animate = (
 // create the animations
 
 animate(
-  '.splashVignette',
-  { opacity: [0, 1, 1, 0] },
-  { timeRange: 'exit -10% 40%', fill: 'both', easing: 'ease-in' },
+  '.splash',
+  { clipPath: ['ellipse(150%, 150%)', 'ellipse(150%, 0%)'] },
+  { timeRange: 'exit 0% 13%', fill: 'both', easing: 'ease-in' },
+);
+animate(
+  '.splashTrellis',
+  { clipPath: ['ellipse(150%, 0%)', 'ellipse(150%, 150%)'] },
+  { timeRange: 'exit 15% 27%', fill: 'both', easing: 'ease-in' },
 );
 animate(
   '.splashTrellis',
